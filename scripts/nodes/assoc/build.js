@@ -27,7 +27,7 @@ function BuildNode(id,rect)
     }
 
     this.send({
-      title: `XXIIVV — ${q.target.capitalize()}`,
+      title: `SITE_TITLE — ${q.target.capitalize()}`,
       theme: q.result ? q.result.theme : 'default',
       view:{
         header:{

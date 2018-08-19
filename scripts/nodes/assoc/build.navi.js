@@ -12,7 +12,7 @@ function BuildNaviNode(id,rect)
     var portal = q.result ? q.result.portal() : null;
 
     if(!portal){ return " " }
-
+    console.log("this");
     return `
     <table>
     <tr><td><svg id="glyph"><path transform="scale(0.12) translate(0,-150)" d="${portal.glyph()}"></path></svg></td></tr>
