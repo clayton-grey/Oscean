@@ -18,6 +18,10 @@ function JournalTemplate(id,rect,...params)
       logs[logs.length] = log
     }
 
+    if(logs.length < 1){
+      return `<p>There is no recent activity to the {{${q.result.name.capitalize()}}} project, go {{back|${q.result.name.capitalize()}}}.</p>`.to_markup()
+    }
+
     // Build journals
     var journals = {}
     for(id in logs){
@@ -34,6 +38,6 @@ function JournalTemplate(id,rect,...params)
       html += `${journal}`
     }
 
-    return `${new ActivityViz(logs)}${new StatusViz(logs)}${html}`
+    return `${new ActivityViz(logs)}${new StatusViz(logs)}${html}<style>.graph.status { margin-bottom:0px !important }</style>`
   }
 }

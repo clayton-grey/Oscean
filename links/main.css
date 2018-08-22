@@ -74,7 +74,7 @@ t { display: inline }
 #sidebar icon.hide { transition: opacity 50ms; opacity: 0; height:0px; margin-bottom:0px; }
 #sidebar icon.show { transition: opacity 150ms, height 250ms opacity: 1;  }
 
-#content { display: inline-block;padding: 45px 30px 30px;margin: 0px auto;vertical-align: top;max-width: calc(100% - 330px);width: 100% }
+#content { display: inline-block;padding: 45px 30px 30px;margin: 0px auto;vertical-align: top;max-width:730px;width: 100% }
 #content > p:first-child { font-size: 32px;line-height: 40px;max-width: 480px  }
 #content p { font-size: 18px;display: block;max-width: 600px;line-height: 25px;font-family: 'archivo_regular';margin: 0px 0px 30px }
 #content p b { font-family: 'archivo_bold'; font-weight: normal; }
@@ -90,11 +90,11 @@ t { display: inline }
 #content h2 { display: block;text-decoration: none;border-bottom: 1.5px solid transparent;transition: all 250ms;font-family: 'archivo_bold';text-transform: capitalize;font-size: 36px;letter-spacing: -1px; margin-bottom: 30px}
 #content h2.book { font-family: 'frank_ruhl_light';max-width: 700px !important;font-size: 40px;margin-bottom:30px;line-height: 45px; text-transform: capitalize;letter-spacing: -1px}
 #content h2.book a { border-bottom:0px;  }
-#content h2 a { display: inline-block; text-decoration: none; border-bottom:1.5px solid transparent; transition: all 250ms; height:30px; }
-#content h2 a:hover { border-bottom: 1.5px solid black  }
+#content h2 a { display: inline-block; text-decoration: none;  transition: all 250ms; height:30px; }
+#content h2 a:hover {}
 #content h3 { font-family: 'archivo_medium';font-size: 30px;text-transform: capitalize;line-height: 30px;max-width: 600px;margin-bottom: 30px;}
 #content h3.book { font-family: 'frank_ruhl_regular'; text-transform: uppercase  }
-#content h3 a { display: inline-block; border-bottom:1.5px solid #000; text-decoration: none}
+#content h3 a { display: inline-block; text-decoration: none}
 #content hs { font-size: 13px;font-family: 'archivo_medium';margin-top: -20px;display: block;margin-bottom: 30px;line-height: 20px; }
 #content hs a { border-bottom:0px; font-family: 'archivo_bold'; }
 #content hs a:hover { text-decoration: underline; }
@@ -105,7 +105,7 @@ t { display: inline }
 #content div.container div.container { padding: 0px 30px;margin-bottom: 45px;border-left: 1.5px solid black }
 #content table { overflow: hidden;border-collapse: separate;font-family: 'input_mono_regular';min-width: 50%;background: #e9e9e9;padding: 20px; font-size:12px; line-height:20px; margin-bottom:30px}
 #content table tr th { font-family:'input_mono_medium'; text-align:left; padding-top:10px; padding-bottom:10px;}
-#content table tr > * { padding-right:15px; padding-left:5px; }
+#content table tr > * { padding-right:10px; padding-left:10px; }
 #content table tr b { font-family: 'input_mono_medium'; font-weight: normal; }
 #content table tr a { text-decoration: underline; }
 #content table tr a:hover { text-decoration: none; }
@@ -188,15 +188,8 @@ t { display: inline }
 #content log .tags a:hover { color:#fff}
 #content log.event .head .topic:after { content: "Event";background: #72dec2;display: inline-block;margin-left: 5px;font-size:12px;padding:0px 10px;border-radius: 100px;line-height: 20px;position: absolute;right:10px;top:20px;color:black }
 
-#content issue { display: block; font-size:12px; }
-#content issue div.name { border-bottom: 1.5px solid #333; font-family: 'input_mono_medium'; font-weight: normal; line-height: 30px; margin-bottom:15px;font-size:11px;}
-#content issue list { margin-bottom: 15px }
-#content issue list ln { display: block;line-height: 20px;font-family: 'input_mono_regular';font-size: 11px;margin-bottom: 0px; position: relative;}
-#content issue list ln:before { content:"•";  position: absolute; left:0px; color:#333;}
-#content issue list ln a { text-decoration: none; font-weight: normal; font-family: 'input_mono_medium' }
-#content issue list ln a:hover { text-decoration: underline; }
-
 #content img { max-width: 100%;display: block;border-radius: 3px;margin:0px 0px 30px; width:700px; }
+#content img.icon { max-width:200px;margin:0px auto 30px;position: relative;left:-60px }
 #content photo { display: block;height: 300px;width: 100%;max-width: 600px;margin-bottom: 30px;border-radius: 2px }
 #content gallery { display: block; max-width: 700px; height:350px; position: relative; overflow: hidden; margin-bottom:30px; overflow: hidden; border-radius: 2px }
 #content gallery photo { position: absolute;background-size: cover;height: 100%;max-width:100% }
@@ -245,6 +238,12 @@ t { display: inline }
 #view.noir log p { color:#aaa }
 #view.noir log p.bref { color:white;}
 #view.noir #content p a:hover { color:#72dec2; }
+#view.noir code.inline { border-color:white; }
+#view.noir table { background:none; font-family: 'archivo_medium'; border-collapse:separate; border-spacing:1px; padding:0px; }
+#view.noir table tr {  }
+#view.noir table tr td { margin-bottom:2px; border-collapse:  }
+#view.noir table tr td a { text-decoration: none; }
+#view.noir table tr td a:hover { text-decoration: underline; }
 
 #footer { background: #fff;color: black;padding: 0px 30px; clear:both; position: relative; }
 #footer #credits { padding: 30px 20px;font-size: 12px;line-height: 40px;color: #000;margin: 0px;max-width: 100%;vertical-align: middle}

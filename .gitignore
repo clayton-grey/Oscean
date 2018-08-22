@@ -1,2 +1,9 @@
 
 .DS*
+scripts/database/horaire.tbtl
+scripts/database/horaire.tbtl
+scripts/database/issues.ndtl
+scripts/database/lexicon.ndtl
+scripts/database/lexicon.ndtl
+scripts/invoke/discourse.ndtl
+scripts/invoke/pi.setup.ndtl

@@ -66,19 +66,21 @@ function Term(name,dict)
     h.points.glyph = this.glyph() != ""
     h.points.issues = this.issues.length == 0
     h.points.links = Object.keys(this.links).length > 0
+    h.points.tags = this.tags.length > 0
 
     // Score
     var p = 0
     for(id in h.points){ p += h.points[id] ? 1 : 0 }
 
-    h['score'] = (p/Object.keys(h.points).length).toFixed(2)
+    h['score'] = (p/Object.keys(h.points).length)
     h['status'] = h['score'] < 0.4 ? 'poor' : h['score'] < 0.7 ? 'fair' : h['score'] < 0.9 ? 'good' : 'perfect'
     return h
   }
 
-  this.has_tag = function(target)
+  this.has_tag = function(str)
   {
-    return this.tags.indexOf(target.toLowerCase()) > -1
+    var target = str.toLowerCase().replace(/ /g,"_").trim()
+    return this.tags.indexOf(target) > -1
   }
 
   this.sectors = function()
