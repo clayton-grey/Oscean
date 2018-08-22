@@ -1,2 +1,5 @@
 
 .DS*
+scripts/database/horaire.tbtl
+scripts/database/issues.ndtl
+scripts/database/lexicon.ndtl
