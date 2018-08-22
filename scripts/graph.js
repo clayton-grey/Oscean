@@ -10,15 +10,16 @@ function graph()
   Ø("model").mesh({x:6,y:0},[
     Ø("router").create({x:5,y:2},RouterNode),
     Ø("database").create({x:5,y:8},DatabaseNode),
-      Ø("lexicon").create({x:2,y:14},TableNode,Indental,Term),
-      Ø("horaire").create({x:5,y:14},TableNode,Tablatal,Log),
-      Ø("issues").create({x:8,y:14},TableNode,Indental),
-      Ø("glossary").create({x:11,y:14},TableNode,Indental,List),
+      Ø("oscean").create({x:2,y:14},TableNode,Indental,Term),
+      Ø("lexicon").create({x:5,y:14},TableNode,Indental,Term),
+      Ø("horaire").create({x:8,y:14},TableNode,Tablatal,Log),
+      Ø("issues").create({x:11,y:14},TableNode,Indental),
+      Ø("glossary").create({x:14,y:14},TableNode,Indental,List),
     Ø("map").create({x:8,y:8},MapNode),
     Ø("invoke").create({x:8,y:2},InvokeNode),
   ])
 
-  Ø("assoc").mesh({x:22,y:0},[
+  Ø("assoc").mesh({x:25,y:0},[
     Ø("build").create({x:5,y:2},BuildNode),
     Ø("_navi").create({x:2,y:8},BuildNaviNode),
     Ø("_sidebar").create({x:5,y:8},BuildSidebarNode),
@@ -32,7 +33,7 @@ function graph()
       Ø("calendar").create({x:14,y:14},CalendarTemplate),
   ])
 
-  Ø("client").mesh({x:41,y:0},[
+  Ø("client").mesh({x:44,y:0},[
     Ø("view").create({x:2,y:2},DocumentNode),
     Ø("style").create({x:5,y:8},DomNode,"style"),
     Ø("header").create({x:2,y:8},DomNode),
@@ -101,7 +102,7 @@ function graph()
   Ø("li_en").syphon("dictionaery")
   Ø("deconstruct").syphon("dictionaery")
   Ø("router").syphon("database")
-  Ø("database").syphon(["lexicon","horaire","issues","glossary"])
+  Ø("database").syphon(["lexicon","oscean","horaire","issues","glossary"])
   Ø("operation").syphon(["li_en","en_li","clock","desamber","deconstruct"])
 
   Ø("query").bang()

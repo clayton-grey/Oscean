@@ -1,0 +1,279 @@
+DATABASE.oscean = `
+HOME
+  UNDE : Home
+  BREF : Getting started with {{Oscean}}.
+  ICON : M150,60 A90,90 0 0,1 240,150 A-90,90 0 0,1 150,240 A-90,-90 0 0,1 60,150 A90,-90 0 0,1 150,60
+  TYPE : Home
+  LONG
+    & If you're looking to get started with {{Oscean}}, this page is designed for you.
+    & The goal of this site is to walk you through the steps necessary to setup and customize this software for your own personal use. Beyond some very basic understanding of web technologies, this site won't make too many assumptions about your technical prowess.
+    & This site is also a living document itself that can improve with time. If something is unclear, post an issue on the {{GitHub repository|https://github.com/XXIIVV/Oscean}}.
+    & As it is living code, {{Oscean}} is complicated and does a lot. If you want a simpler solution, consider these {{alternatives}}.
+    & {{First things first...|Configuration}}
+  ETCS
+    & This wiki provides documentation and narrative context for the various {{Audio}}, {{Visual}} and {{Research}} projects of {{AUTHOR_NAME}}.
+    & Remove the portal tag to hide the navigation.
+
+OSCEAN
+  UNDE : Home
+  BREF : {{Oscean}} is a flat-file wiki engine.
+  TAGS : portal Index
+  ICON : M150,90 L150,90 L90,195 L210,195 L150,90 Z
+  LONG
+    & {{Oscean}}, initiated on {{08P13|Calendar}}, is meant to be a repository of personal projects and notes.
+    & It has since grown into a collection of {{tools}}.
+    & If the notions {{suggested here|https://wiki.xxiivv.com/#about}} appeal to you, then this guide is here to help you {{get started|Configuration}}.
+    & It will run anywhere and doesn't require a webserver. GitHub Pages is a recommended way to host your site (this and more in the {{configuration guide|configuration}}).
+    & It can be customized to support whatever data you want to log and present.
+  LINK
+    Github : https://github.com/XXIIVV/Oscean
+
+ALTERNATIVES
+  UNDE : OSCEAN
+  BREF : Simpler implementations using {{Oscean's}} {{tools}};
+  LONG
+    & Grimgrains is a simple website built on Oscean without any of the tracking.
+    & 100 Rabbits is a straight-forward traditional website also built on Riven.
+    & {{Legacy|https://github.com/nomand/Legacy/blob/master/lib/view.js}} is simpler wiki implementation that uses {{Runic}} and {{Indental}}.
+    & {{memex|https://github.com/kormyen/memex}} is a bookmarking a notes application that uses {{Intental}}.
+
+CONFIGURATION
+  UNDE : Oscean
+  TAGS : index
+  BREF : Follow this guide to get started.
+  LONG
+    & Getting everything working is fairly straight-forward. Customization requires slightly more technical knowhow. 
+    - Follow these {{First Steps}}.
+
+FIRST STEPS
+  UNDE : Configuration
+  BREF : Follow this guide to {{get started|first steps}}
+  LONG
+    # Convert this to an invoke?
+    & You’ll want to clone a clean copy of this branch of Oscean with Git. This will give you a clean copy of Oscean without any of the Nataniev data. (We'll even tell you how to remove this guide!)
+    & {{Oscean}} proposes some specific ways of arranging the information stored within. The original system is included, but this document will cover how to make changes to suit your own needs! 
+    & {{Oscean}} is a more complex {{Riven}} application. The {{Grimgrains}} and {{100 Rabbits}} pages provide simpler examples of sites built on {{Riven}} if you feel overwhelmed at any point.
+
+USAGE
+  UNDE : Oscean
+  BREF : This tool suggests a specific usage.
+  LONG
+    & 
+    & DLL has been building and using this framework for over 10 years, and it's been designed to suit his usage and habits. While Oscean can be hacked to do whatever you want, this basic installation is intended to follow the paradigm it was intended for:
+    - Quickly logging the focus of your day.
+    - Managing personal data.
+
+TOOLS
+  UNDE : Oscean
+  TAGS : index
+  BREF : A collection of light-weight scripts.
+  LONG 
+    & {{Oscean}} is made up of simple parts.
+    & It is built on {{Riven}}, so as you look to customize it for your personal use, you’ll benefit from taking some time to grok how information flows through it. You’ll benefit from a basic understanding of how {{Riven}} works as you modify the structure of Oscean to suit your needs.
+    & The Javascript under the hood is organized in the {_/Oscean/scripts/nodes/_} folder according to the meshes mapped in the Riven.html file. 
+    & If you're technically inclined, you may might want to {{start here|tools}}.
+    & Otherwise, you can about some {{general details|About}}.
+
+RIVEN
+  UNDE : Tools
+  BREF : {{Riven}} is a Flowbased Programing framework.
+  ICON : M45,60 L45,60 L255,60 M45,240 L45,240 L255,240 M60,60 L60,60 L60,240 M240,60 L240,60 L240,240 M150,60 L150,60 L60,150 L150,240
+  LONG
+    & This tiny {{framework|https://github.com/XXIIVV/Riven}} handles the spawning of nodes and communication between them.
+    & {{Riven}} exists at the core of {{Oscean}}, but was originally developed for the creation of a serverless {{Grimgrains|http://grimgrains.com}}.
+    & The network for cannoniacal Oscean can be viewed {{here|http://wiki.xxiivv.com/riven.html}}.
+  LINK
+    Github : https://github.com/XXIIVV/Riven
+
+TIME
+  UNDE : Tools
+  TAGS : Horaire index
+  BREF : The {{Time}} portal covers all {{Oscean}} time related entries.
+  ICON : M60,60 L60,60 L240,60 L240,240 L60,240 Z M60,120 L60,120 L240,120 M120,120 L120,120 L120,240 M120,180 L120,180 L240,180 M180,180 L180,180 L180,240
+  LONG
+    & The {{Oscean}} time format has both a {{Date|Desamber}} and a {{Clock}}.
+  LINK
+    View Online : https://clock.xxiivv.com
+    Github : http://github.com/XXIIVV/Clock
+
+DATABASES
+  UNDE : Tools
+  TAGS : index
+  BREF : The {{Databases}} portal covers all {{Oscean}} database related entries.
+  LONG
+    & The {{Oscean}} database formats support a {{intented|Indental}} and a {{grid-based|Tablatal}}.
+
+INDENTAL
+  UNDE : Databases
+  BREF : {{Indental}} is one of the {{Oscean}} database formats.
+  LONG
+    & This flat-file database format is inspired by YAML, and is meant to be intelligible while remaining flexbile and fast.
+    & The {{parser|https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/indental.js}} is a mere 50 lines, and allows for neat data structures for serverless sites. The file extension is {#.ndtl#} and has its own {{syntax highlight|https://github.com/XXIIVV/Oscean/tree/master/resources}}.
+    # NAME
+    #   KEY &#58; VALUE
+    #   LIST
+    #     ITEM1
+    #     ITEM2
+    # <comment>Or, {NAME:{KEY:VALUE,LIST:[ITEM1,ITEM2]}}</comment>
+  LINK
+    Github : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/indental.js
+    Syntax : https://github.com/csmccaleb/Tome
+
+TABLATAL
+  UNDE : Databases
+  BREF : {{Tablatal}} is one of the {{Oscean}} database formats.
+  LONG
+    & This grid based, space sensitive, database format is meant to index strings of predictible length.
+    & The {{parser|https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/tablatal.js}} is 40 lines long, and allows for neat data structures for serverless sites. The file extension is {#.tbtl#} and has its own {{syntax highlight|https://github.com/XXIIVV/Oscean/tree/master/resources}}.
+    # NAME    AGE   COLOR
+    # Erica   12    Opal
+    # Alex    23    Cyan
+    # Nyke    34    Red
+    # <comment>Or, [{name:Erica,Age:12,Color:Blue},{name:Alex,Age..</comment>
+  LINK
+    Github : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/tablatal.js
+
+RUNIC
+  UNDE : Tools
+  BREF : {{Runic}} is the {{Oscean}} markup language.
+  LONG
+    & This templating language is currently used across {{Oscean}}, {{Grimgrains|http://grimgrains.com/}} and the various {{Hundred Rabbits|http://100r.co/}} sites.
+    & Each line is prefixed by a rune, giving a sense of the data being handled.
+    # * Header
+    # & Paragraph
+    # @ Quote | Author | Source | Link
+    # - List Element 1
+    # - List Element 2
+    # ! table | header
+    # | table | table
+    # # <comment>-- CODE BLOCK</comment>
+    # $ clock <comment>// Rendered as {{$clock}}</comment>
+    # / eval() <comment>// Javascript</comment>
+  LINK
+    Github : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/runic.js
+    Syntax : https://github.com/csmccaleb/Tome
+
+MARKUP
+  UNDE : Tools
+  BREF : The {{Markup}} language used across {{Oscean}}.
+  LONG
+    & This markup language was designed to be simple, unobstrusive and to strictly follow the {{Runic}} syntax.
+    & The templated strings are {*wrapped within curlies*}.
+    # &#123;*bold*&#125; {*bold*}
+    # &#123;_italic_&#125; {_italic_}
+    # &#123;&#123;About&#125;&#125; {{About}}
+    # &#123;&#123;$clock&#125;&#125; {{$clock}}
+    # &#123;&#123;/5+5&#125;&#125; {{/5+5}}
+  LINK
+    Github : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/markup.js
+
+HORAIRE
+  UNDE : Tools
+  BREF : {{Horaire}} is a {{Time}} tracking tool.
+  ICON : M60,60 L60,60 L240,60 L240,240 L60,240 Z M60,120 L60,120 L240,120 M120,120 L120,120 L120,240 M120,180 L120,180 L240,180 M180,180 L180,180 L180,240
+  TAGS : invoke
+  LONG
+    & Daily productivity logs are recorded at the {{end of each day|https://wiki.xxiivv.com/#Aesthetics}}, adding {*valuable data*} to projects.
+    & An {*Horaire Log*} contains 3 numbers, also called axes, effectively positioning the entry on a 3 dimensional graph.
+    & {*The Sector*}({_Sh_}), either Audio, Visual, or Research, is the sector of the task, the explanation behind this value is defined in the {{Gamme|https://wiki.xxiivv.com/#gamme}}.
+    & The {*Concrete Hour*}({_Ch_}), or vector, represents a value of concrete output, or index of progress toward the release of a project. It is also a vague indicator of a log's task type when combined with the sector value.
+
+! SFC     | Audio                             | SFC     | Visual                            | SFC     | Research
+    | {*10*} | {{/ new Log().tasks[0][0]}} | {*20*} | {{/ new Log().tasks[1][0]}} | {*30*} | {{/ new Log().tasks[2][0]}}
+    | {*11*} | {{/ new Log().tasks[0][1]}} | {*21*} | {{/ new Log().tasks[1][1]}} | {*31*} | {{/ new Log().tasks[2][1]}}
+    | {*12*} | {{/ new Log().tasks[0][2]}} | {*22*} | {{/ new Log().tasks[1][2]}} | {*32*} | {{/ new Log().tasks[2][2]}}
+    | {*13*} | {{/ new Log().tasks[0][3]}} | {*23*} | {{/ new Log().tasks[1][3]}} | {*33*} | {{/ new Log().tasks[2][3]}}
+    | {*14*} | {{/ new Log().tasks[0][4]}} | {*24*} | {{/ new Log().tasks[1][4]}} | {*34*} | {{/ new Log().tasks[2][4]}}
+    | {*15*} | {{/ new Log().tasks[0][5]}} | {*25*} | {{/ new Log().tasks[1][5]}} | {*35*} | {{/ new Log().tasks[2][5]}}
+    | {*16*} | {{/ new Log().tasks[0][6]}} | {*26*} | {{/ new Log().tasks[1][6]}} | {*36*} | {{/ new Log().tasks[2][6]}}
+    | {*17*} | {{/ new Log().tasks[0][7]}} | {*27*} | {{/ new Log().tasks[1][7]}} | {*37*} | {{/ new Log().tasks[2][7]}}
+    | {*18*} | {{/ new Log().tasks[0][8]}} | {*28*} | {{/ new Log().tasks[1][8]}} | {*38*} | {{/ new Log().tasks[2][8]}}
+    | {*19*} | {{/ new Log().tasks[0][9]}} | {*29*} | {{/ new Log().tasks[1][9]}} | {*39*} | {{/ new Log().tasks[2][9]}}
+    & The {*Focus Hour*}({_Fh_}), or value, is an index of attention for the day's task — where 1 indicates that no time was invested in the task, and 9 indicates that all available time was invested in the task.
+    @ <b>Effectiveness</b>, is doing the right thing.<br><b>Efficiency</b>, is doing it the right way.
+  LINK
+    Raw Data : https://github.com/XXIIVV/Oscean/blob/master/scripts/database/horaire.tbtl
+
+DESAMBER
+  UNDE : Time
+  BREF : {{Desamber}} is the date format of {{Oscean}}.
+  ICON : M60,60 L60,60 L240,60 L240,240 L60,240 Z M60,120 L60,120 L240,120 M120,120 L120,120 L120,240 M120,180 L120,180 L240,180 M180,180 L180,180 L180,240
+  LONG
+    & The Desamber {{Calendar|Calendar}} has {*26 months*} of {*14 days*} each. 
+    & The 365th day of the year is the {_Year Day_}, preceded by the {_Leap Day_} on leap years. Each month has {*2 weeks*} of {*7 days*}, and each month's name is one of the 26 letters of the alphabet.
+  LINK
+    Library : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/desamber.js
+
+CLOCK
+  UNDE : Time
+  BREF : {{Desamber}} is the time format of {{Oscean}}.
+  ICON : M60,60 L60,60 L240,60 L240,240 L60,240 Z M60,120 L60,120 L240,120 M120,120 L120,120 L120,240 M120,180 L120,180 L240,180 M180,180 L180,180 L180,240
+  LONG
+    & The clock has two groups of 3 digits, called the {_beat_} and the {_pulse_}. For example, {*Noon*} is 500:000, {*6AM*} is 250:000 and {*6PM*} is 750:000.
+    & In the decimal format, the shortest pulse equals to {*8.64 milliseconds*}, the second shortest {*86.4*} and so on. 1 beat, or 1000 pulses, is equivalent to {*86.4 seconds*}, or about 1m44s. A second is equivalent to 1.157 beats.
+    % custom https://clock.xxiivv.com
+    & It is possible to replace your computer's clock, more details {{here|https://clock.xxiivv.com}}. The header picture is that of {{Kormyen|https://twitter.com/kormyen/status/1003223010621321217}}'s {{Ardusamber|https://github.com/kormyen/Ardusamber}}, an {*Arduino-based*} {{clock}} display. The line display design is called The {{Entaloneralie|https://wiki.xxiivv.com/#entaloneralie}}.
+  LINK
+    View : https://clock.xxiivv.com
+    Library : https://github.com/XXIIVV/Oscean/blob/master/scripts/lib/clock.js
+
+QUESTIONS
+  UNDE : Oscean
+  BREF : Here are some answers to common questions.
+  LONG
+    & stub
+
+TRACKER
+  UNDE : Oscean
+  TYPE : Tracker
+  LOOK : Noir
+  BREF : The SITE_TITLE {{Overseer|Tracker}}.
+
+
+STATUS
+  UNDE : Tracker
+  BREF : SITE_TITLE {{status}}-report.
+  ICON : M150,90 A45,45 0 0,1 195,135 A-45,45 0 0,1 150,180 A-45,-45 0 0,1 105,135 A45,-45 0 0,1 150,90 M180,135 A45,45 0 0,1 225,180 A-45,45 0 0,1 180,225 A-45,-45 0 0,1 135,180 A45,-45 0 0,1 180,135 M120,135 A45,45 0 0,1 165,180 A-45,45 0 0,1 120,225 A-45,-45 0 0,1 75,180 A45,-45 0 0,1 120,135 
+  TAGS : invoke
+  LONG
+    & The {{Status}} is a special page showing the documentation progress of {{Oscean}}.
+  LINK
+    Submit Revision : https://github.com/XXIIVV/Oscean/blob/master/scripts/database/lexicon.ndtl
+    RSS Validation : https://validator.w3.org/feed/check.cgi?url=https%3A//wiki.xxiivv.com/links/rss.xml
+
+ABOUT
+  UNDE : Tracker
+  BREF : Technical details in regards to this {{wiki|About}}.
+  TAGS : invoke Index
+  LOOK : Noir
+  LONG
+    & {*SITE_TITLE*} is a {{digital playground|Oscean}} and personal {{logging system|Horaire}}.
+
+PHILOSOPHY
+  UNDE : About
+  BREF : The design and development {{Philosophy}} behind {{Oscean}}.
+  LOOK : Noir
+  LONG
+    & The very fabric of a tool should be imbued with intent and purpose.
+    & It should be modular, combinable, stackable — Iterable as one change, and adaptable as technology evolves while remaining maintainable by others.
+    @ The right amount of technology is the minimum needed to solve the problem. | Calm Technology
+    & To persist across technological {*Long Term*}, not one part should be built, compiled, or minified — Every method {*specific*}, {*obvious*}, {*unobfuscated*}; each one carefully chosen against general-purpose libraries, frameworks or wasteful foreign entities.
+    & It should aspire to always be {*frictionless and undisruptive*}. Its formats and subsequent products versionable, re-purposable, interpretable and text-editable; graphics vectors, audio mods and databases flat-files.
+    & Only through open sources, open standards, human-readable formats and their independencies, might they survive this fleeting age of self-destructing informatics.
+    & These attributes should not only be perceptible in its design, <br />but deeply rooted in its code.
+
+LICENSE
+  UNDE : About
+  BREF : The {{Oscean}} {{License}}.
+  LONG
+    & If you have any <b>question or feedback</b>, please submit a {{bug report|https://github.com/XXIIVV/Oscean/issues/new}}.
+    & The {{platform code|http://github.com/XXIIVV/Oscean}} is under the {#MIT License#}.<br />The {{media and text content|https://creativecommons.org/licenses/by-nc-sa/4.0/}} is under the {#BY-NC-SA 4.0 License#}.
+    # You are free to<br /><br />
+    # - <b>Share</b>: copy and redistribute the material in any medium or format.
+    # - <b>Adapt</b>: remix, transform, and build upon the material.<br /><br />
+    # Under the following terms<br /><br />
+    # - <b>Attribution</b>: You must give appropriate credit.
+    # - <b>NonCommercial</b>: You may not use the material for commercial purposes.
+    # - <b>ShareAlike</b>: You must distribute your contributions under the same license.
+
+`
