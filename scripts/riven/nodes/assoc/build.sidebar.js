@@ -9,11 +9,7 @@ function BuildSidebarNode(id,rect)
   this.answer = function(q)
   {    
     if(!q.result){
-<<<<<<< HEAD:scripts/nodes/assoc/build.sidebar.js
-      return "<h1>The SITE_TITLE Services Desk</h1><h2>{{Home}}</h2>".to_markup()
-=======
-      return "<h1>The {{Nataniev}} Services Desk</h1><h2>{(Home)}</h2>".to_curlic()
->>>>>>> master:scripts/riven/nodes/assoc/build.sidebar.js
+      return "<h1>The SITE_TITLE Services Desk</h1><h2>{(Home)}</h2>".to_curlic()
     }
     var html = ""
     for(id in q.result.links){
