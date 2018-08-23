@@ -2,22 +2,22 @@ DATABASE.lexicon = `
 
 HOME
   UNDE : Home
-  BREF : Getting started with {{Oscean}}.
+  BREF : Getting started with {(Oscean)}.
   ICON : M150,60 A90,90 0 0,1 240,150 A-90,90 0 0,1 150,240 A-90,-90 0 0,1 60,150 A90,-90 0 0,1 150,60
   TYPE : Home
   LONG
-    & If you're looking to get started with {{Oscean}}, this page is designed for you.
+    & If you're looking to get started with {(Oscean)}, this page is designed for you.
     & The goal of this site is to walk you through the steps necessary to setup and customize this software for your own personal use. Beyond some very basic understanding of web technologies, this site won't make too many assumptions about your technical prowess.
-    & This site is also a living document itself that can improve with time. If something is unclear, post an issue on the {{GitHub repository|https://github.com/XXIIVV/Oscean}}.
-    & As it is living code, {{Oscean}} is complicated and does a lot. If you want a simpler solution, consider these {{alternatives}}.
-    & {{First things first...|Configuration}}
+    & This site is also a living document itself that can improve with time. If something is unclear, post an issue on the {GitHub repository(https://github.com/XXIIVV/Oscean)}.
+    & As it is living code, {(Oscean)} is complicated and does a lot. If you want a simpler solution, consider these {(alternatives)}.
+    & {First things first...(Configuration)}
   ETCS
-    & This wiki provides documentation and narrative context for the various {{Audio}}, {{Visual}} and {{Research}} projects of {{AUTHOR_NAME}}.
+    & This wiki provides documentation and narrative context for the various {(Audio)}, {(Visual)} and {(Research)} projects of {(AUTHOR_NAME)}.
     & Remove the portal tag to hide the navigation.
 
 AUTHOR_NAME
   UNDE : Home
-  BREF : {{AUTHOR_NAME}} is a where your bio goes.
+  BREF : {(AUTHOR_NAME)} is a where your bio goes.
   TAGS : Diary
   ICON : M150,60 l0,180 M180,60 l0,180 l0,-60 a30,-30 0 0,1 30,-30 l30,0 M120,60 l0,180 l0,-60 a-30,-30 0 0,0 -30,-30 l-30,0
   LONG
@@ -30,14 +30,14 @@ AUTHOR_NAME
 AUDIO
   UNDE : Home
   TAGS : portal children
-  BREF : The {{Audio}} portal hosts various soundtrack, records and live projects.
+  BREF : The {(Audio)} portal hosts various soundtrack, records and live projects.
   LONG
     & Welcome to the {*Audio Portal*}. 
 
 VISUAL
   UNDE : Home
   TAGS : portal children
-  BREF : The {{Visual}} hosts design and interaction projects.
+  BREF : The {(Visual)} hosts design and interaction projects.
   ICON : M75,210 L75,210 L225,210 M135.5,55 L135.5,55 L60.5,185 M239.5,185 L239.5,185 L164.5,55 
   LONG
     & Welcome to the {*Visual Portal*}. 
@@ -46,20 +46,20 @@ RESEARCH
   UNDE : Home
   TAGS : portal children
   ICON : M60,240 a30,-30 0 0,1 30,-30 l150,0 M90,195 a30,-30 0 0,1 30,-30 l90,0 M120,150 a30,-30 0 0,1 30,-30 l30,0 M195,120 l45,0 M225,165 l15,0 M150,105 a30,-30 0 0,1 30,-30 l60,0
-  BREF : The {{Research}} hosts philosophy and linguistics projects.
+  BREF : The {(Research)} hosts philosophy and linguistics projects.
   LONG
     & Welcome to the {*Research Portal*}. 
 
 FRAMBOISEDORF
   UNDE : Research
-  BREF : Overview of the Raspberry toy piano.
+  BREF : Overview of the {(Raspberry)} toy piano.
   TAGS : Diary
   ICON : M75,90 L75,90 L225,90 M105,90 A-15,15 0 0,0 90,105 A0,120 0 0,0 90,225 A15,15 0 0,0 105,240 A-30,0 0 0,0 75,240 A15,-15 0 0,0 90,225 A0,-120 0 0,0 90,105 A-15,-15 0 0,0 75,90 M195,90 A15,15 0 0,1 210,105 A0,120 0 0,1 210,225 A-15,15 0 0,1 195,240 A30,0 0 0,1 225,240 A-15,-15 0 0,1 210,225 A0,-120 0 0,1 210,105 A15,-15 0 0,1 225,90
   LONG
-    & A hackable toy piano to play {{muzzak|https://twitter.com/neauoire/status/1029498719811424256}} on rainy days.
-    & Features 6 synth & 1 drum instruments, 5 octaves, and automated arpgeggios. Connect to a speaker and play. Read the full guide on {{Github|https://github.com/neauoire/Framboisedorf.local}}, or watch a {{demo video|https://youtu.be/U8q_yZ3XEKU}}.
-    - {{Pimoroni's Piano Hat|https://shop.pimoroni.com/products/piano-hat}}
-    - {{PiBow|https://shop.pimoroni.com/products/pibow-coupe-for-raspberry-pi-3-b-plus}} Case
+    & A hackable toy piano to play {muzzak(https://twitter.com/neauoire/status/1029498719811424256)} on rainy days.
+    & Features 6 synth & 1 drum instruments, 5 octaves, and automated arpgeggios. Connect to a speaker and play. Read the full guide on {Github(https://github.com/neauoire/Framboisedorf.local)}, or watch a {demo video(https://youtu.be/U8q_yZ3XEKU)}.
+    - {Pimoroni's Piano Hat(https://shop.pimoroni.com/products/piano-hat)}
+    - {PiBow(https://shop.pimoroni.com/products/pibow-coupe-for-raspberry-pi-3-b-plus)} Case
     - 4 x M2.5 Standoffs
   LINK
     Sources : https://github.com/neauoire/Framboisedorf
