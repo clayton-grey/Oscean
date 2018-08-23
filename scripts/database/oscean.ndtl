@@ -6,9 +6,9 @@ HOME
   TYPE : Home
   LONG
     & If you're looking to get started with {{Oscean}}, this page is designed for you.
-    & The goal of this site is to walk you through the steps necessary to setup and customize this software for your own personal use. Beyond some very basic understanding of web technologies, this site won't make too many assumptions about your technical prowess.
+    & The goal of this site is to walk you through the steps necessary to setup and customize this software for your own personal use. Beyond some very basic understanding of web technologies, this site won't make too many assumptions about your technical prowess but also won't teach you those basics.
     & This site is also a living document itself that can improve with time. If something is unclear, post an issue on the {{GitHub repository|https://github.com/XXIIVV/Oscean}}.
-    & As it is living code, {{Oscean}} is complicated and does a lot. If you want a simpler solution, consider these {{alternatives}}.
+    & As it is living code, {{Oscean}} is somewhat complicated and does a lot. If you want a simpler solution, consider these {{alternatives}}.
     & {{First things first...|Configuration}}
   ETCS
     & This wiki provides documentation and narrative context for the various {{Audio}}, {{Visual}} and {{Research}} projects of {{AUTHOR_NAME}}.
@@ -23,16 +23,16 @@ OSCEAN
     & {{Oscean}}, initiated on {{08P13|Calendar}}, is meant to be a repository of personal projects and notes.
     & It has since grown into a collection of {{tools}}.
     & If the notions {{suggested here|https://wiki.xxiivv.com/#about}} appeal to you, then this guide is here to help you {{get started|Configuration}}.
-    & It will run anywhere and doesn't require a webserver. GitHub Pages is a recommended way to host your site (this and more in the {{configuration guide|configuration}}).
+    & It will run anywhere and doesn't require a webserver. {{GitHub Pages|https://pages.github.com/}} is a recommended way {{to host your site|hosting}} (this and more in the {{configuration guide|configuration}}).
     & It can be customized to support whatever data you want to log and present.
   LINK
     Github : https://github.com/XXIIVV/Oscean
 
 ALTERNATIVES
-  UNDE : OSCEAN
+  UNDE : oscean
   BREF : Simpler implementations using {{Oscean's}} {{tools}};
   LONG
-    & Grimgrains is a simple website built on Oscean without any of the tracking.
+    & Grimgrains is a basic website built on Oscean without any of the tracking.
     & 100 Rabbits is a straight-forward traditional website also built on Riven.
     & {{Legacy|https://github.com/nomand/Legacy/blob/master/lib/view.js}} is simpler wiki implementation that uses {{Runic}} and {{Indental}}.
     & {{memex|https://github.com/kormyen/memex}} is a bookmarking a notes application that uses {{Intental}}.
@@ -42,26 +42,89 @@ CONFIGURATION
   TAGS : index
   BREF : Follow this guide to get started.
   LONG
-    & Getting everything working is fairly straight-forward. Customization requires slightly more technical knowhow. 
+    & Getting everything working is fairly straight-forward. {{Customization}} requires slightly more technical knowhow. 
+    - Check out this {{Overview}} if you want a plain explanation of the parts.
     - Follow these {{First Steps}}.
+    - Replace the site title (SITE_TITLE) and customize copy in the following files:
+    - lexicon.ndtl
+    - build.js
+    - build.sidebar.js
+    - Customize the error in missing.js to match your site’s needs
+    & Propose a config file for this!!!
+    - STUB: complete your entry about yourself
+    - By default the site will load your "HOME" entry. As configured, a "HOME" entry is required. Without your own "HOME" entry in the Lexicon, this tutorial's HOME will load in it's place. All of the information about {{Oscean}}, including this guide, can be found in the 'Oscean.ndtl' database.
+    - {{Oscean}} is ready to go!
+    - Now is a good time to consider what kind of content you need to make sense of. We all have different things going on, and Oscean can be altered to suit your personal needs. Review your needs; review how {{Horaire}} is intended to work. Logging is particularly personal. Consider {{customization}}.
+    - Now you just need to {{write your content|usage}}
+    - STUB: Optionally, if you want your site to be public, you can {{push your data to GitHub Pages|hosting}}.
+
+CUSTOMIZATION
+  UNDE : configuration
+  BREF : 
+  LONG
+    # Warning! This is where things can get complex!
+    & This part of the guide is intended to give you some guidance and suggestions for making Oscean do what you need it to. What follows is a collection of suggestions organized from simple to complex:
+    - {{You can change the time formatting system|custom time}}.
+    - Customize the home page.
+    - You can customize the {{Horaire}} codes.
+    - Customize when BREF is shown.
+    - Prevent the inclusion of child entries.
+    - Customizing the CSS.
+    - Add a database for information you want to include {_*only*_} in your local repository.
+
+
+CUSTOM TIME
+  LONG
+    & By default {{Oscean}} uses {{Desamber}}, a custom date and time format (https://wiki.xxiivv.com/#time).
+    & If you prefer to use a regular clock, swap /scripts/clock.js with /Oscean/scripts/clock_standard.js in index.html
 
 FIRST STEPS
   UNDE : Configuration
   BREF : Follow this guide to {{get started|first steps}}
   LONG
     # Convert this to an invoke?
-    & You’ll want to clone a clean copy of this branch of Oscean with Git. This will give you a clean copy of Oscean without any of the Nataniev data. (We'll even tell you how to remove this guide!)
-    & {{Oscean}} proposes some specific ways of arranging the information stored within. The original system is included, but this document will cover how to make changes to suit your own needs! 
     & {{Oscean}} is a more complex {{Riven}} application. The {{Grimgrains}} and {{100 Rabbits}} pages provide simpler examples of sites built on {{Riven}} if you feel overwhelmed at any point.
+    & You’ll want to clone copy of this branch of Oscean with Git. This will give you a clean copy of Oscean without only the most basic data. (We'll even tell you how to remove this guide!)
+    & {{Oscean}} proposes some specific ways of arranging the information stored within. The original system is included, but this document will {{cover how to make changes to suit your own needs|customization}}! 
+   
+
+OVERVIEW
+  UNDE : tools
+  BREF : A simple {overview} of how Oscean's tools relate.
+  LONG
+    & {{Riven}} acts as a kind of virtual webserver. It uses Javascript to define the parts and how they relate.
+    & You’ll benefit from a basic understanding of how {{Riven}} works to {{modify the structure|customization}}. {{Oscean}} is built on {{Riven}}, so as you look to customize things for your personal use, you’ll benefit from taking some time to grok what Riven is doing.
+    & The Javascript under the hood is organized in the {_/Oscean/scripts/nodes/_} folder according to the meshes mapped in the {{Riven.html|link}} file. 
+    & {{Oscean}} also uses acouple of different ways of organizing information in "{{databases}}" - {{Indental}} and {{Tablatal}}. These simple readable textfiles are where you will write and record your information.
+    & Additionally, {{Oscean}} includes a couple of means of defining content structure and style, {{Runic}} and {{Markup}}. These allow you to define lists and headings and make text _italic_ or what-have-you. You've probably stumbled across similar stuff.
+    & {{Horaire}} is the logging component used by {{Oscean}}. It's used to keep a daily log. By default it uses a custom date and time format, but this document will explain how to change it if you prefer something more traditional if you prefer.
+    & {{Oscean}} includes {{Journal}} that allow you to see your data from your logs, a {{Tracker}} that gives you a "health report" on how complete your wiki is, and a {{Calendar}} that provides an overview of important events (marked in the {{Horaire}}).
 
 USAGE
   UNDE : Oscean
   BREF : This tool suggests a specific usage.
   LONG
-    & 
     & DLL has been building and using this framework for over 10 years, and it's been designed to suit his usage and habits. While Oscean can be hacked to do whatever you want, this basic installation is intended to follow the paradigm it was intended for:
     - Quickly logging the focus of your day.
     - Managing personal data.
+    & To create an entry in the database, you'll want to edit {_/Oscean/scripts/databases/lexicon.ndtl_}. Review 'oscean.ndtl' (where this information is stored) if you'd like to see a populated database example.
+    & Make note that entries use {{Markup}} and {{Runic}} for formating your entries.
+    & STUB : There's also some runic stuff going on here. Here's jazz about the basic ndtl tags.
+    & STUB : Oscean data is heirarchical, so terms have parents, and Oscean links
+    - ‘portal’ tag enables the navigation map (by default it’s not included on the homepage and has some whacky redundancy behavior when it is)
+    & STUB : horaire expects to see a single log per day.
+    & STUB : adding images via Horaire.
+    & STUB : Display inline images
+    & {{Horaire}} is a Toblatal database ({_/Oscean/scripts/databases/horaire.tbtl_}). This is where you’ll enter your logs. It will only have one entry. Update the date to reflect when you begin!
+    - DATE is the date in Desamber (see Dates and Time below). CODE is a way of designating the task you’ve been working on. The “rune” in front (-,!,+) flag whether it featured (! - requires a photo), or whether it’s an event (+, also feature if it has a photo).
+    - Featured posts are visible on home when they’re the latest post.
+    - Events are shown on the calendar (???????).
+    - PICT is a numeric codename for a JPG found in /media/diary/
+    - Name provides a caption for PICT
+    - Otherwise name can be a label for an Event (???) or a descriptive entry, but you shouldn’t feel compelled to include one. It’s not really intended for detailed record keeping
+    - STUB: Files in the /Oscean/scripts/invoke/ folder are used for one-shot page customizations. 
+    - STUB: Additionally you can create new databases for specific types of data and then create a new template to render that data. Learn more about that under {{customization}}.
+
 
 TOOLS
   UNDE : Oscean
@@ -221,7 +284,11 @@ QUESTIONS
   UNDE : Oscean
   BREF : Here are some answers to common questions.
   LONG
-    & stub
+    & How do you log days with multiple focuses? 
+    - Oscean was implemented with a single productivity focus for a day in mind. 
+    & What determines the heading image for an entry?
+    - It's pulled from the image code in the Horaire that matches the term.
+
 
 TRACKER
   UNDE : Oscean
