@@ -21,7 +21,10 @@ function BuildSidebarNode(id,rect)
       html += `<a href='${q.result.links[id]}' target='_blank'>${id}</a>`
     }
 
+    return `<h1>${q.result.bref.to_curlic()}</h1>
     <h2>
+      <a onclick="Ø('query').bang('${q.result.unde}')">${q.result.unde}</a><br />
+      ${q.result.span.from && q.result.span.to ? q.result.span.from+'—'+q.result.span.to : ''}
       <div class='links'>${html}</div>
     </h2>`
   }
