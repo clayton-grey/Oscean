@@ -36,16 +36,16 @@ function InvokeNode(id,rect)
     this.archives[name] = payload;
 
     if(!parser){
-      this.cache.result.dict.LATE = payload(this.cache)  
+      this.cache.result.data.LATE = payload(this.cache)  
     }
     else{
       var data = new parser(payload).parse()
       var html = ""
       for(id in data){
         var seg = data[id]
-        html += `<h3>${id.capitalize()}</h3>${new Runic(seg,this.cache.tables)}`
+        html += `<h3>${id.capitalize()}</h3>${new Runic(seg,Curlic)}`
       }
-      this.cache.result.dict.LATE = html
+      this.cache.result.data.LATE = html
     }
     this.send(this.cache)
   }

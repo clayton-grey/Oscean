@@ -1,4 +1,4 @@
-function Runic(lines = [])
+function Runic(lines = [],templater = null)
 {
   this.lines = lines;
 
@@ -7,7 +7,7 @@ function Runic(lines = [])
     "?":{tag:"p",class:"note"},
     "-":{tag:"ln",wrapper:"list"},
     "#":{tag:"ln",wrapper:"code"},
-    "*":{tag:"h2"},
+    "*":{tag:"h3"},
     "+":{tag:"hs"},
     "@":{tag:"quote",fn:quote},
     "|":{tag:"tr",wrapper:"table",fn:table},
@@ -29,7 +29,7 @@ function Runic(lines = [])
   function stash(acc,l)
   {
     var rune = l.substr(0,1)
-    var line = l.substr(2).trim()
+    var line = l.substr(2)
     var prev = acc[acc.length-1] ? acc[acc.length-1] : [{rune:rune,a:[]}]
 
     if(prev.rune == rune){
@@ -48,8 +48,9 @@ function Runic(lines = [])
     var wr = runes[stash.rune].wrapper
     for(var id in stash.a){
       var r = runes[stash.rune]
-      var str = r.fn ? r.fn(stash.a[id]) : stash.a[id]
-      html += r.tag ? `<${r.tag} class='${r.class ? r.class : ''}'>${str}</${r.tag}>` : `${str}`
+      var txt = r.fn ? r.fn(stash.a[id]) : stash.a[id]
+      var htm = templater ? new templater(txt) : txt
+      html += r.tag ? `<${r.tag} class='${r.class ? r.class : ''}'>${htm}</${r.tag}>` : `${htm}`
     }
     return wr ? `${acc}<${wr}>${html}</${wr}>` : `${acc}${html}`
   }
@@ -83,7 +84,7 @@ function Runic(lines = [])
 
   function table(content)
   {
-    return `<td>${content.replace(/ \| /g,"</td><td>")}</td>`
+    return `<td>${content.trim().replace(/ \| /g,"</td><td>")}</td>`
   }
 
   // 

@@ -1,6 +1,7 @@
-function Curlic(text = "",force_external = false)
+function Curlic(text = "",origin = null)
 {
-  this.text = text;
+  this.text = `${text}`;
+  this.origin = origin;
 
   var runes = {
     "*":{tag:"b"},
@@ -22,15 +23,19 @@ function Curlic(text = "",force_external = false)
 
   function link(s,t)
   {
-    var target = t.replace("(","").replace(")","")
-    var external = target.indexOf("//") > -1
-    var name = s.replace(`(${target})`,"")
-    var href = this.force_external ? 'https://wiki.xxiivv.com/'+target.url() : !external ? `#${target.to_url()}` : target
-    var click = !external ? `Ø('query').bang('${target}')` : ''
-    var view = this.force_external || external ? '_blank' : '_self'
-    var className = external ? 'external' : 'local'
+    this.origin = null
 
-    return `<a href='${href}' title='${target}' onclick="${click}" class='${className}' target='${view}'>${name ? name : target}</a>`
+    var target = t.replace("(","").replace(")","")
+    var external = target.indexOf("//") > -1 || this.origin
+    var name = s.replace(`(${target})`,"")
+    var location = target.toLowerCase().replace(/ /g,"+").replace(/[^0-9a-z\+\:\-\.\/]/gi,"").trim();
+
+    if(external){
+      return `<a href='${target}' target='_blank' class='external'>${name ? name : target}</a>`
+    }
+    else{
+      return `<a href='#${location}' onclick="${!external && Ø ? `Ø('query').bang('${target}')` : ''}">${name ? name : target}</a>`
+    }
   }
 
   function evaluate(s,t)
@@ -72,7 +77,8 @@ function Curlic(text = "",force_external = false)
   this.toString = function()
   {
     var matches = this.extract();
-    if(!matches){ return `${i}`; }
+
+    if(!matches){ return this.text; }
 
     matches.forEach(el => {
       this.text = this.text.replace(`{${el}}`,parse(el))
@@ -81,4 +87,4 @@ function Curlic(text = "",force_external = false)
   }
 }
 
-String.prototype.to_curlic = function(force_external){ return `${new Curlic(this,force_external)}`; }
+String.prototype.to_curlic = function(origin){ return `${new Curlic(this,origin)}`; }

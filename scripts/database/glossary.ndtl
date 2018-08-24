@@ -287,10 +287,10 @@ UX
   Tesler’s Law : Tesler's Law, also known as The Law of Conservation of Complexity, states that for any system there is a certain amount of complexity which cannot be reduced.
   Zeigarnik Effect : People remember uncompleted or interrupted tasks better than completed tasks.
   Law of Prägnanz : People will perceive and interpret ambiguous or complex images as the simplest form possible, because it is the interpretation that requires the least cognitive effort of us.
-  Law of Proximity [Prägnanz] : Objects that are near, or proximate to each other, tend to be grouped together.
-  Law of Closure [Prägnanz] : The law of closure states that individuals perceive objects such as shapes, letters, pictures, as being whole when they are not complete. Specifically, when parts of a whole picture are missing, our perception fills in the visual gap.
-  Law of Symmetry [Prägnanz] : The law of symmetry states that the mind perceives objects as being symmetrical and forming around a center point.
-  Von Restorff Effect [Prägnanz] : The Von Restorff effect, also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
+  Law of Proximity : Objects that are near, or proximate to each other, tend to be grouped together.
+  Law of Closure : The law of closure states that individuals perceive objects such as shapes, letters, pictures, as being whole when they are not complete. Specifically, when parts of a whole picture are missing, our perception fills in the visual gap.
+  Law of Symmetry : The law of symmetry states that the mind perceives objects as being symmetrical and forming around a center point.
+  Von Restorff Effect : The Von Restorff effect, also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
 DARK PATTERNS
   Bait and Switch : You set out to do one thing, but a different, undesirable thing happens instead.
   Confirmshaming : Confirmshaming is the act of guilting the user into opting into something. The option to decline is worded in such a way as to shame the user into compliance.
@@ -335,16 +335,16 @@ DEVELOPMENT
 ~ Directory
 
 BOOKS
-  Flatland : {Edwin A. Abbott. 1884(https://en.wikipedia.org/wiki/Flatland)}
   Le Matin Des Magiciens : {L. Pauwels & J. Bergier. 1960(https://en.wikipedia.org/wiki/The_Morning_of_the_Magicians)}
   Le Città Invisibili : {Italo Calvino. 1972 (https://en.wikipedia.org/wiki/Invisible_Cities)}
   Ficciones : {Jorge Luis Borges. 1941(https://en.wikipedia.org/wiki/Ficciones)}
   No.44 : {Mark Twain. 1916(https://en.wikipedia.org/wiki/The_Mysterious_Stranger)}
   Kybalion : {Three Initiates. 1908(https://en.wikipedia.org/wiki/Kybalion)}
   La Ricerca della Lingua Perfetta : {Umberto Eco. 1993(https://en.wikipedia.org/wiki/La_Ricerca_della_Lingua_Perfetta_nella_Cultura_Europea)}
+  Flatland : {Edwin A. Abbott. 1884(https://en.wikipedia.org/wiki/Flatland)}
   Blumroch l'admirable : {Louis Pauwels. 1976(https://en.wikipedia.org/wiki/Louis_Pauwels)}
   The Book Of Tea : {Okakura Kakuzō. 1906(https://en.wikipedia.org/wiki/The_Book_of_Tea)}
-  The Glass Bead Game : {Hermann Hesse. 1943(https://en.wikipedia.org/wiki/The_Glass_Bead_Game)}
+  Handmaid's Tale : {Margaret Atwood. 1985(https://en.wikipedia.org/wiki/The_Handmaid%27s_Tale)}
   Journals : {Henry David Thoreau. 1837(https://www.walden.org/collection/journals/)}
   Etidorhpa : {John Uri Lloyd. 1895(http://www.sacred-texts.com/earth/eti/index.htm)}
 MOVIES
@@ -392,16 +392,19 @@ GAMES
 
 ~ Bookmarks
 
-OPERATING SYSTEMS
-  OSMC : {(https://osmc.tv/download/)}, Media center.
-  OMXPlayer : {(https://elinux.org/Omxplayer)}, Media player.
+RASPBERRY
   FreeBSD : {(https://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi)}
-  ArchLinux : {(https://archlinuxarm.org/about/downloads)}
   Pi Hole : {(http://pi-hole.net)}, Spam filter.
   Linux From Scratch : {(http://intestinate.com/pilfs/)}
-  WebKitGTK : {https://webkitgtk.org)}({Tutorial(https://medium.com/@WebReflection/a-minimalistic-64-bit-web-kiosk-for-rpi-3-98e460419b47)})
-  ResinOS : {(https://resinos.io/#downloads)} & {Yocto(https://www.yoctoproject.org)}({Tutorial(https://www.instructables.com/id/Building-GNULinux-Distribution-for-Raspberry-Pi-Us/)})
   PicoPi : {(https://guillermoamaral.com/read/picopi/)}
+  ResinOS : {(https://resinos.io/#downloads)} & 
+  Yocto : {(https://www.yoctoproject.org)}({Tutorial(https://www.instructables.com/id/Building-GNULinux-Distribution-for-Raspberry-Pi-Us/)})
+SOFTWARE
+  OSMC : {(https://osmc.tv/download/)}, Media center.
+  OMXPlayer : {(https://elinux.org/Omxplayer)}, Media player.
+OPERATING SYSTEMS
+  ArchLinux : {(https://archlinuxarm.org/about/downloads)}
+  WebKitGTK : {https://webkitgtk.org)}({Tutorial(https://medium.com/@WebReflection/a-minimalistic-64-bit-web-kiosk-for-rpi-3-98e460419b47)})
   Urbit : {(http://urbit.org)}
 WIKIS
   Gwern : {(http://gwern.net)}
@@ -483,4 +486,14 @@ CELESTIAL NAVIGATION
 
 TO READ
   The cyberiad : {Wikipedia(https://en.wikipedia.org/wiki/The_Cyberiad)}
+
+~ Nataniev
+
+HORAIRE
+  HDf : Hour Day Focus, is Fh/Days.
+  HDc : Hour Day Concrete, is Ch/Days.
+  Efec : Effectiveness, is AVRG(Fh)/Topics.
+  Efic : Efficiency, is AVRG(Ch)/Topics.
+  Out : An Average Focus Index AVRG(EFEC+EFIC).
+  Osc : An Oscillation index of ABS(EFEC-EFIC).
 `

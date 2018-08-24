@@ -1,5 +1,7 @@
-function Term(name,dict)
+function Term(name,data)
 {
+  Entry.call(this,name,data);
+
   this.parent = null       // From Ø('map')
   this.children = []       // From Ø('map')
   this.logs = []           // From Ø('map')
@@ -12,32 +14,19 @@ function Term(name,dict)
 
   this.name = name;
 
-  this.dict = dict;
-  this.type = dict.TYPE ? dict.TYPE.toLowerCase() : null;
-  this.links = this.dict.LINK ? this.dict.LINK : [];
-  this.tags = this.dict.TAGS ? this.dict.TAGS.toLowerCase().split(" ") : [];
-  this.theme = this.dict.LOOK ? this.dict.LOOK.toLowerCase() : 'default';
+  this.data = data;
+  this.bref = data.BREF ? data.BREF : ''
+  this.unde = data.UNDE ? data.UNDE : 'Home'
+  this.type = data.TYPE ? data.TYPE.toLowerCase() : null;
+  this.links = this.data.LINK ? this.data.LINK : [];
+  this.tags = this.data.TAGS ? this.data.TAGS.toLowerCase().split(" ") : [];
+  this.theme = this.data.LOOK ? this.data.LOOK.toLowerCase() : 'default';
 
   this.is_portal = this.tags.indexOf("portal") > -1
   
-  this.unde = function()
-  {
-    return this.dict.UNDE ? this.dict.UNDE : "Home"
-  }
-
-  this.bref = function()
-  {
-    return this.dict && this.dict.BREF ? this.dict.BREF.to_curlic() : ''
-  }
-
-  this.long = function(tables)
-  {
-    return `${new Runic(this.dict.LONG,tables)}`.to_curlic() + (this.dict.LATE ? this.dict.LATE : '')
-  }
-
   this.glyph = function()
   {
-    if(this.dict.ICON){ return this.dict.ICON; }
+    if(this.data.ICON){ return this.data.ICON; }
     if(this.parent.glyph()){ return this.parent.glyph(); }
     if(this.portal().glyph()){ return this.portal().glyph(); }
     return null;
@@ -57,7 +46,7 @@ function Term(name,dict)
   {
     var h = {points:{}}
 
-    h.points.long = this.dict.LONG && this.dict.LONG.length > 0
+    h.points.long = this.data.LONG && this.data.LONG.length > 0
     h.points.logs = this.logs.length > 0
     h.points.children = this.children.length > 0
     h.points.photo = this.diaries.length > 0
@@ -104,14 +93,15 @@ function Term(name,dict)
   this.find_outgoing = function()
   {
     var a = []
-    var str = this.dict.BREF + (this.dict.LONG ? this.dict.LONG.join("\n") : '');
+    var str = this.data.BREF + (this.data.LONG ? this.data.LONG.join("\n") : '');
 
     var curlies = new Curlic(str).extract()
 
     if(!curlies){ return []; }
 
     curlies = curlies.filter(el =>{ return el.indexOf("(") > -1; })
-    curlies = curlies.filter(el =>{ return el.indexOf("//") < 0; })
+    curlies = curlies.filter(el =>{ return el.indexOf("//") < 0; }) // Skip external
+    curlies = curlies.filter(el =>{ return el.indexOf("[") < 0; })  // Skip evals
 
     curlies.forEach(el=>{
       var name = el.split("(")[1].replace(")","")
@@ -124,5 +114,10 @@ function Term(name,dict)
     return array.sort(function(a, b){
       return a[1] - b[1];
     }).reverse();
+  }
+
+  this.toString = function()
+  {
+    return `${new Runic(this.data.LONG,Curlic)}`
   }
 }

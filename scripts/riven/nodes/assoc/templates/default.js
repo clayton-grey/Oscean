@@ -6,11 +6,11 @@ function DefaultTemplate(id,rect,...params)
   
   this.answer = function(q)
   {
+    if(q.target.toLowerCase() == "index"){ return this.signal('index').answer(q) }
     if(!q.result){ return this.signal('missing').answer(q) }
 
-    var html = ""
+    var html = `${q.result}`
 
-    html += q.result.long(q.tables);
     html += q.result.has_tag("children") ? this._children(q) : ''
     html += q.result.has_tag("diary") || q.params == "diary" ? this._diary(q) : ''
     html += q.result.has_tag("index") ? this._index(q) : ''
@@ -22,7 +22,6 @@ function DefaultTemplate(id,rect,...params)
 
   this._diary = function(q)
   {
-
     var html = ""
     var term = q.result;
     var skip = term.featured_log
@@ -45,9 +44,9 @@ function DefaultTemplate(id,rect,...params)
       var child = term.children[id];
       html += `
       <h2>${child.name.capitalize()}</h2>
-      <hs>${child.bref()}</hs>
+      <hs>${child.bref.to_curlic()}</hs>
       ${child.featured_log ? `<a onclick='Ø("query").bang("${child.name}")'><img src="media/diary/${child.featured_log.photo}.jpg"/></a>` : ''}
-      ${child.long(q.tables)}`
+      ${child}`
     }
     return html
   }
@@ -68,15 +67,14 @@ function DefaultTemplate(id,rect,...params)
   this._glossary = function(q)
   {
     var html = ""
-    html += `<h2>{(Glossary)}</h2>`;
-    html += `<list class='tidy' style='padding-left:30px'>`
     var words = Object.keys(q.tables.glossary).sort();
     for(var id in words){
-      var word = words[id]
-      html += `<ln>{(${word.capitalize()})}, ${q.tables.glossary[word].to_a().length} items</ln>`
+      var name = words[id]
+      var word = q.tables.glossary[name]
+      var children = Object.keys(word.data)
+      html += `<ln>{(${name.capitalize()})} — ${children.length} items</ln>`
     }
-    html += `</list>`
-    return html.to_curlic()
+    return `<h2>{(Glossary)}</h2><list class='tidy' style='padding-left:30px'>${html}</list>`.to_curlic()
   }
 
   this._children = function(q)
@@ -85,7 +83,7 @@ function DefaultTemplate(id,rect,...params)
 
     for(id in q.result.children){
       var term = q.result.children[id]
-      html += `<ln>{(${term.name.capitalize()})}: ${term.bref()}</ln>`
+      html += `<ln>{(${term.name.capitalize()})}: ${term.bref}</ln>`
     }
     return `<list>${html}</list>`.to_curlic();
   }
