@@ -1,20 +1,5 @@
 DATABASE.lexicon = `
 
-HOME
-  UNDE : Home
-  BREF : Getting started with {(Oscean)}.
-  ICON : M150,60 A90,90 0 0,1 240,150 A-90,90 0 0,1 150,240 A-90,-90 0 0,1 60,150 A90,-90 0 0,1 150,60
-  TYPE : Home
-  LONG
-    & If you're looking to get started with {(Oscean)}, this page is designed for you.
-    & The goal of this site is to walk you through the steps necessary to setup and customize this software for your own personal use. Beyond some very basic understanding of web technologies, this site won't make too many assumptions about your technical prowess.
-    & This site is also a living document itself that can improve with time. If something is unclear, post an issue on the {GitHub repository(https://github.com/XXIIVV/Oscean)}.
-    & As it is living code, {(Oscean)} is complicated and does a lot. If you want a simpler solution, consider these {(alternatives)}.
-    & {First things first...(Configuration)}
-  ETCS
-    & This wiki provides documentation and narrative context for the various {(Audio)}, {(Visual)} and {(Research)} projects of {(AUTHOR_NAME)}.
-    & Remove the portal tag to hide the navigation.
-
 AUTHOR_NAME
   UNDE : Home
   BREF : {(AUTHOR_NAME)} is a where your bio goes.

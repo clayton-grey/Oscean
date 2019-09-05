@@ -27,7 +27,7 @@ function graph()
       Ø("missing").create({x:2,y:20},MissingTemplate),
       Ø("index").create({x:5,y:20},IndexTemplate),
       Ø("default").create({x:2,y:14},DefaultTemplate),
-      Ø("home").create({x:5,y:14},HomeTemplate),
+//      Ø("home").create({x:5,y:14},HomeTemplate),
       Ø("journal").create({x:8,y:14},JournalTemplate),
       Ø("tracker").create({x:11,y:14},TrackerTemplate),
       Ø("calendar").create({x:14,y:14},CalendarTemplate),
